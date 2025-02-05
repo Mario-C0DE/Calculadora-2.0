@@ -1,0 +1,130 @@
+/* inicio */
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+}
+section 
+{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+	flex-wrap: wrap;
+	overflow: hidden;
+}
+section::before 
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#000,#0f0,#000);
+	animation: animate 5s linear infinite;
+}
+@keyframes animate 
+{
+	0%
+	{
+		transform: translateY(-100%);
+	}
+	100%
+	{
+		transform: translateY(100%);
+	}
+}
+/* fim */
+
+.calculadora {
+  background-color: rgba(74, 224, 0, 0.10);
+  border: 1px solid rgb(74, 224, 0);
+  backdrop-filter: blur(2.0px);
+  padding: 10px 10px 2.5em 10px;
+  height: 75%;
+  width: 90%;
+  margin-top: 2.5em;
+  border-radius: 15px;
+}
+.tela {
+  padding: 10px;
+  width: 90%;
+  height: 30px;
+  margin: 1.5em 0.2em 2.5em 0.2em;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+input {
+  font-size: 20px;
+  text-align: right;
+  background-color: rgba(0, 0, 0, 0.8); /* Fundo transparente */
+  backdrop-filter: blur(10px); /* Efeito de desfoque */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+}
+.botoes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+button {
+  border: none;
+  border-radius: 15px;
+  padding: 5px;
+  height: 40px;
+}
+#numero {
+  border: 1px solid rgb(74, 224, 0);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+#operador {
+  background-color: rgb(74, 224, 0);
+}
+#limpar {
+  background-color: red;
+}
+
+/* ----------------------------------------- */
+
+section span 
+{
+	position: relative;
+	width: calc(6.25vw - 2px);
+	height: calc(6.25vw - 2px);
+	background: #181818;
+	transition: 1.5s;
+}
+section span:hover 
+{
+	background: #0f0;
+	transition: 0s;
+}
+
+input[type="submit"]:active
+{
+	opacity: 0.6;
+}
+@media (max-width: 900px)
+{
+	section span 
+	{
+		width: calc(10vw - 2px);
+		height: calc(10vw - 2px);
+	}
+}
+@media (max-width: 600px)
+{
+	section span 
+	{
+		width: calc(20vw - 2px);
+		height: calc(20vw - 2px);
+	}
+}
+/* ----------------------------------------- */
